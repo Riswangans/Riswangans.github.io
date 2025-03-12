@@ -7,92 +7,113 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background: #f5f5f5;
     color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    background: #2c3e50;
-    color: #fff;
-    padding: 20px 0;
     text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #222;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 16px;
 }
 
-/* Hero Section */
 .hero {
-    background: url('https://source.unsplash.com/1600x600/?gaming') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://source.unsplash.com/1600x900/?gaming') no-repeat center center/cover;
     color: white;
     text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.hero .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #e74c3c;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.hero .btn:hover {
-    background: #c0392b;
-}
-
-/* Features */
-.features {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    padding: 40px 20px;
-    background: white;
-}
-
-.feature {
-    flex: 1;
     padding: 20px;
 }
 
-.feature h3 {
+.hero h1 {
+    font-size: 36px;
     margin-bottom: 10px;
-    color: #2c3e50;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    background: #2c3e50;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e03e00;
+}
+
+.services {
+    padding: 50px;
+    background: #fff;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-box {
+    background: #f5f5f5;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+    padding: 30px;
+    background: #222;
     color: #fff;
-    padding: 10px;
-    margin-top: 20px;
+}
+
+.contact a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+footer {
+    padding: 15px;
+    background: #111;
+    color: white;
 }
