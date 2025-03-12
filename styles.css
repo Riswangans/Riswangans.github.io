@@ -1,27 +1,26 @@
 /* Reset dasar */
-* {
+body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f5f5f5;
+    background-color: #f4f4f4;
     color: #333;
-    text-align: center;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
     background: #222;
-    color: #fff;
+    padding: 15px 30px;
+    color: white;
 }
 
-header .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
 }
@@ -36,84 +35,77 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-}
-
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('https://source.unsplash.com/1600x900/?gaming') no-repeat center center/cover;
     color: white;
-    text-align: center;
-    padding: 20px;
+    font-weight: bold;
 }
 
-.hero h1 {
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
     font-size: 36px;
     margin-bottom: 10px;
 }
 
-.hero p {
+.hero-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-.btn {
+.cta-button {
     display: inline-block;
-    background: #ff4500;
-    color: white;
     padding: 10px 20px;
+    background: #ff5733;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
     border-radius: 5px;
-    transition: 0.3s;
+    font-size: 18px;
 }
 
-.btn:hover {
-    background: #e03e00;
+/* Layanan */
+.layanan {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
 }
 
-.services {
-    padding: 50px;
-    background: #fff;
-}
-
-.services h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.service-container {
+.layanan-container {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-.service-box {
-    background: #f5f5f5;
+.layanan-item {
+    background: #ddd;
     padding: 20px;
-    width: 250px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
 }
 
-.contact {
-    padding: 30px;
-    background: #222;
-    color: #fff;
+/* Tentang */
+.tentang {
+    text-align: center;
+    padding: 50px 20px;
+    background: #eee;
 }
 
-.contact a {
-    color: #ff4500;
-    text-decoration: none;
+/* Kontak */
+.kontak {
+    text-align: center;
+    padding: 50px 20px;
 }
 
+/* Footer */
 footer {
-    padding: 15px;
-    background: #111;
+    text-align: center;
+    padding: 20px;
+    background: #222;
     color: white;
 }
