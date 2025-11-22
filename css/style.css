@@ -70,19 +70,3 @@ body {
   font-weight: bold;
   color: #444;
 }
-
-/* Header default */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    z-index: 999;
-    transition: top 0.3s ease;
-}
-
-/* Saat disembunyikan */
-.header-hidden {
-    top: -80px; /* naik ke atas, angka menyesuaikan tinggi header */
-}
