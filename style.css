@@ -1,59 +1,32 @@
-/* File: style.css */
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-
-.pricing-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.title {
-    font-size: 28px;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-.pricing-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-.pricing-card h3 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.pricing-card table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.pricing-card table td {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-.pricing-card table tr:last-child td {
-    border-bottom: none;
-}
+            font-family: 'Poppins', sans-serif;
+            background: #F9F9F9;
+            color: #111111;
+            scroll-behavior: smooth;
+        }
+        .btn-main {
+            background: #007AFF;
+            color: #fff !important;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+        .btn-main:hover { opacity: .85; }
+        .glass {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .dark-section {
+            background: #111111;
+            color: #fff;
+            padding: 80px 0;
+        }
+        .dark-card {
+            background: #1b1b1b;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        }
