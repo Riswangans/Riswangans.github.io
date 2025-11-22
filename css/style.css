@@ -30,3 +30,43 @@ body {
             padding: 25px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.35);
         }
+        
+        /* --- Testimonial Slider --- */
+.testimonial-section {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  display: none; /* biar scroll bar tidak kelihatan */
+}
+
+.testimonial-card {
+  width: 260px;              /* <-- KUNCI LEBAR */
+  max-width: 260px;          /* <-- JAMIN TIDAK MELEBAR */
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  text-align: left;          /* biar lebih rapi dibaca */
+  word-wrap: break-word;     /* antisipasi teks panjang */
+  white-space: normal;       /* pastikan teks tidak memanjang */
+}
+
+.testimonial-card h4 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
