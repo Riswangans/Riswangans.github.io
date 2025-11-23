@@ -131,6 +131,8 @@ setupTablePagination("tableApk");
 setupTablePagination("tableNokos");
 setupTablePagination("tableBoost");
 
-// Bisa ditambahkan untuk tabel lain, misal:
-// setupTablePagination("tableNokos");
-// setupTablePagination("tableBoost");
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".accordion-collapse").forEach(el => {
+        el.style.display = "";
+    });
+});
