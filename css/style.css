@@ -41,6 +41,7 @@ body {
 .testimonial-slider {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden !important;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 20px;
@@ -69,4 +70,20 @@ body {
   margin-top: 10px;
   font-weight: bold;
   color: #444;
+}
+
+/* Header default */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: top 0.3s ease;
+}
+
+/* Saat disembunyikan */
+.header-hidden {
+    top: -80px; /* naik ke atas, angka menyesuaikan tinggi header */
 }
