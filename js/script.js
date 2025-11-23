@@ -133,6 +133,6 @@ setupTablePagination("tableBoost");
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".accordion-collapse").forEach(el => {
-        el.style.display = "";
+        el.style.visibility = "visible";
     });
 });
