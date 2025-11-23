@@ -53,21 +53,23 @@ document.querySelectorAll(".btn-wa").forEach(btn => {
   });
 });
 
-let lastScroll = 0;
-const header = document.querySelector("header");
+document.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
+    let lastScroll = 0;
+    const header = document.querySelector("header");
 
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        // scroll ke bawah -> sembunyikan header
-        header.classList.add("header-hidden");
-    } else {
-        // scroll ke atas -> tampilkan header
-        header.classList.remove("header-hidden");
-    }
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
 
-    lastScroll = currentScroll;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.classList.add("header-hidden");
+        } else {
+            header.classList.remove("header-hidden");
+        }
+
+        lastScroll = currentScroll;
+    });
+
 });
 
 function setupTablePagination(tableId, rowsPerPage = 5) {
