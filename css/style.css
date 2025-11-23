@@ -87,3 +87,7 @@ header {
 .header-hidden {
     top: -80px; /* naik ke atas, angka menyesuaikan tinggi header */
 }
+
+.accordion-collapse {
+    display: none !important;
+}
