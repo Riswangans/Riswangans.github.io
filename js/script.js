@@ -44,7 +44,7 @@ document.querySelectorAll(".btn-wa").forEach(btn => {
     pesan += `Produk: *${nama}*\n`;
     if (desc !== "-") pesan += `Deskripsi: ${desc}\n`;
     pesan += `Harga: ${harga}\n\n`;
-    pesan += `Mohon diproses ya.`;
+    pesan += `Tolong kirimkan payment ya.`;
 
     const encoded = encodeURIComponent(pesan);
     const nomor = "18254875043";
