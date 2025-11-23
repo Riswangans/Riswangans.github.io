@@ -89,5 +89,5 @@ header {
 }
 
 .accordion-collapse {
-    display: none !important;
+    visibility: hidden;
 }
