@@ -419,3 +419,18 @@ window.addEventListener('resize', () => {
         updatePagination();
     }, 250);
 });
+// Indikator scroll tabel
+const tableScroll = document.querySelector('.table-scroll');
+if (tableScroll) {
+    tableScroll.addEventListener('scroll', function() {
+        if (this.scrollLeft > 10) {
+            this.classList.add('scrolling');
+        } else {
+            this.classList.remove('scrolling');
+        }
+    });
+}
+
+// Pastikan body tidak scroll horizontal
+document.body.style.overflowX = 'hidden';
+document.documentElement.style.overflowX = 'hidden';
