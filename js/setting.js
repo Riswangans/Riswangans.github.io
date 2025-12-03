@@ -2,49 +2,96 @@
 // SETTING PRODUK KHUSUS - VERSI FLEKSIBEL
 // ============================
 
+// ==================== DATA TESTIMONI ====================
+const settingTestimoni = [
+    {
+        text: "Pelayanan sangat cepat dan ramah, bakal langganan terus!",
+        author: "Budi Saputra"
+    },
+    {
+        text: "Harga murah tapi kualitas bukan kaleng-kaleng, mantap banget.",
+        author: "Sinta Amelia"
+    },
+    {
+        text: "Respon cepat, pengerjaan rapi, sangat rekomendasi!",
+        author: "Rizky Pratama"
+    },
+    {
+        text: "APK premiumnya work semua, ga pernah ada kendala!",
+        author: "Andi Wijaya"
+    },
+    {
+        text: "Nokosnya fresh banget, langsung bisa dipakai verifikasi.",
+        author: "Maya Sari"
+    }
+    // CARA MENAMBAH TESTIMONI:
+    // Tambahkan di sini dengan format:
+    // {
+    //     text: "isi testimoni",
+    //     author: "nama"
+    // },
+];
+
+// ==================== DATA FAQ ====================
+const settingFAQ = [
+    {
+        question: "Bagaimana cara pemesanan?",
+        answer: `1. Pilih produk yang anda mau di atas <br>
+2. Klik tombol "beli" nanti anda akan di arahkan ke WhatsApp secara otomatis <br>
+3. Tanpa basa basi langsung klik kirim <br>
+4. Tunggu admin kirim payment <br>
+5. Lalu anda harus transfer terlebih dahulu untuk proses <br>
+6. Jika sudah transfer, admin akan otomatis proses pesanan anda, dan anda tinggal tunggu`
+    },
+    {
+        question: "Apakah aman?",
+        answer: "APK Premium, Nokos, dan suntik medsos saya jamin 100% aman."
+    },
+    {
+        question: "Apa itu nokos?",
+        answer: "Nokos adalah nomor kosong/nomor virtual untuk memverifikasi berbagai macam jenis aplikasi."
+    },
+    {
+        question: "Berapa lama prosesnya?",
+        answer: "Proses bervariasi: APK Premium 1-24 jam, Nokos instan, Suntik Medsos 1-48 jam. Info lengkap ada di keterangan produk."
+    },
+    {
+        question: "Apakah ada garansi?",
+        answer: "Ya, setiap produk memiliki garansi berbeda-beda. Lihat deskripsi produk untuk detail garansi."
+    }
+    // CARA MENAMBAH FAQ:
+    // Tambahkan di sini dengan format:
+    // {
+    //     question: "pertanyaan",
+    //     answer: "jawaban<br>bisa pakai html"
+    // },
+];
+
+// ==================== SETTING INFO KHUSUS PRODUK ====================
 const settingInfoKhusus = {
     // ==================== BERDASARKAN KATEGORI ====================
     kategori: {
-        // Format: "nama_kategori": "pesan_info_khusus"
-        
         "APK Premium": "📱 *INFO APK PREMIUM:*\n\n• Akun akan dikirim dalam 1-24 jam\n• Garansi sesuai durasi produk\n• Pastikan email aktif untuk verifikasi\n• Tidak bisa refund setelah akun dikirim",
-        
         "Nokos": "📞 *INFO NOMOR KOSONG:*\n\n⚠️ PERINGATAN!\n1. Nomor hanya aktif 24 jam\n2. Tidak bisa untuk verifikasi WhatsApp\n3. Hanya untuk OTP aplikasi biasa\n4. Tidak ada garansi setelah 24 jam",
-        
         "Suntik Media Sosial": "📈 *INFO SUNTIK MEDSOS:*\n\n⏱️ PROSES 1-48 JAM\n• Proses dimulai setelah pembayaran\n• Tidak bisa refund setelah proses\n• Garansi drop >70% dalam 30 hari\n• Real human followers/subscribers"
     },
     
     // ==================== BERDASARKAN NAMA PRODUK ====================
     namaProduk: {
-        // Format: "keyword_nama": "pesan_info_khusus"
-        // Akan dicek apakah nama produk mengandung keyword ini
-        
         "INSTAGRAM": "📸 *INFO INSTAGRAM FOLLOWERS:*\n\n⚠️ NONAKTIFKAN LAPORAN UNTUK DITINJAU!\n\nLangkah-langkah:\n1. Buka Instagram → Settings\n2. Pilih Privacy → Followers and following\n3. Matikan 'Hide offensive comments'\n4. Nonaktifkan 'Tandai untuk Ditinjau'",
-        
         "AI CHATGPT": "🤖 *INFO AI CHATGPT:*\n\n• Hanya bisa digunakan di browser web\n• Tidak support aplikasi mobile\n• Akun sharing (bisa dipakai 4 user)\n• No garansi untuk banned account",
-        
         "ADOBE": "🎨 *INFO ADOBE:*\n\n• Akun dikirim via email manual (1x24 jam)\n• Private akun - 1 user saja\n• Include Write Pro feature\n• Garansi 20 hari",
-        
         "YOUTUBE PREMIUM": "📺 *INFO YOUTUBE PREMIUM:*\n\n• Pastikan logout akun Google dari semua device\n• Bisa invite 5 orang (HEAD plan)\n• Garansi 20 hari\n• Work on Android & iOS",
-        
         "CANVA PRO": "🎨 *INFO CANVA PRO:*\n\n• Link invite dikirim via email (1-2 jam)\n• Edu lifetime available\n• Garansi sesuai paket\n• Full feature access",
-        
         "TIKTOK": "🎵 *INFO TIKTOK FOLLOWERS:*\n\n• Proses slow drip (24-48 jam)\n• Non-drop quality followers\n• Garansi refill 30 hari\n• Real engagement",
-        
         "FOLLOWERS": "👥 *INFO FOLLOWERS UMUM:*\n\n⏱️ PROSES 1-24 JAM\n• Mulai setelah pembayaran confirm\n• No refund setelah proses start\n• Garansi drop >70% dalam 30 hari\n• Support semua platform",
-        
         "SUBSCRIBERS": "📊 *INFO SUBSCRIBERS:*\n\n⏱️ PROSES 24-48 JAM\n• Slow drip untuk natural growth\n• Real human subscribers\n• Garansi 60 hari\n• High retention rate"
     },
     
     // ==================== BERDASARKAN KEYWORD SPESIFIK ====================
     keywordSpesifik: {
-        // Format: ["array_keyword"]: "pesan_info_khusus"
-        // Akan dicocokkan jika SEMUA keyword ada di nama produk
-        
         '["INSTAGRAM", "1508"]': "💸 *INFO PAKET TERMURAH:*\n\n• Harga paling murah\n• Non Indo followers\n• Garansi refill 30 hari\n• Proses cepat (1-6 jam)",
-        
         '["INSTAGRAM", "879"]': "⭐ *INFO PAKET PREMIUM:*\n\n• Non-drop quality\n• Real looking followers\n• Garansi refill 30 hari\n• Proses 6-24 jam",
-        
         '["TIKTOK", "1371"]': "🇧🇷 *INFO TIKTOK BRAZIL:*\n\n• Brazil followers\n• Garansi refill 365 HARI\n• High quality\n• Proses 12-48 jam"
     }
 };
@@ -100,7 +147,7 @@ function getInfoKhususUntukProduk(namaProduk, kategoriProduk) {
     return null; // Tidak ada info khusus
 }
 
-// --- DATA SEMUA PRODUK ---
+// ==================== DATA SEMUA PRODUK ====================
 const allProducts = [
     // ==================== APK PREMIUM ====================
     {
