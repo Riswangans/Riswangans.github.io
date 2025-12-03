@@ -12,8 +12,26 @@ body {
 }
 
 /* Container tidak boleh overflow */
-.container, section, .dark-section, .testimonial-section {
+.container, section {
     overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+/* Section Layanan Kami - NO OVERFLOW */
+#layananSection {
+    overflow: visible !important;
+}
+
+#layananSection .container,
+#layananSection .row,
+#layananSection .col-md-4 {
+    overflow: visible !important;
+}
+
+/* TESTIMONIAL SECTION KHUSUS */
+.testimonial-section {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
     max-width: 100% !important;
 }
 
@@ -48,11 +66,40 @@ body {
     padding: 80px 0;
 }
 
+/* ============================== */
+/* LAYANAN KAMI - FIX SCROLL */
+/* ============================== */
 .dark-card {
     background: #1b1b1b;
     border-radius: 14px;
     padding: 25px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    height: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible !important;
+}
+
+.dark-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.dark-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Pastikan semua elemen di layanan section bisa visible */
+.dark-section .dark-card,
+.dark-section .container,
+.dark-section .row,
+.dark-section .col-md-4 {
+    overflow: visible !important;
 }
 
 /* ============================== */
@@ -72,6 +119,7 @@ body {
     gap: 20px;
     padding: 20px;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .testimonial-slider::-webkit-scrollbar {
@@ -90,6 +138,7 @@ body {
     text-align: left;
     word-wrap: break-word;
     white-space: normal;
+    overflow: visible !important;
 }
 
 .testimonial-card h4 {
@@ -419,6 +468,20 @@ header {
         height: 34px !important;
         font-size: 13px !important;
     }
+    
+    /* Dark card untuk tablet */
+    .dark-card {
+        min-height: 200px;
+        padding: 20px;
+    }
+    
+    .dark-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    .dark-card p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Mobile */
@@ -503,6 +566,27 @@ header {
     .pagination-numbers .page-btn.btn-primary {
         display: flex !important;
     }
+    
+    /* Dark card untuk mobile */
+    .dark-section {
+        padding: 60px 0;
+    }
+    
+    .dark-card {
+        min-height: 160px;
+        padding: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .dark-card h4 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+    }
+    
+    .dark-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
 }
 
 /* Very small mobile */
@@ -543,5 +627,19 @@ header {
     .table-controls .form-control {
         width: 100% !important;
         max-width: 100% !important;
+    }
+    
+    /* Dark card untuk mobile kecil */
+    .dark-card {
+        min-height: 150px;
+        padding: 15px;
+    }
+    
+    .dark-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dark-card p {
+        font-size: 0.8rem;
     }
 }
