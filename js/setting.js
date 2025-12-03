@@ -539,15 +539,15 @@ const allProducts = [
     // ==================== NOKOS ====================
     {
         kategori: "Nokos",
-        nama: "Nokos Premium",
-        desc: "Nomor virtual premium untuk verifikasi berbagai aplikasi",
-        harga: "Rp 25.000"
+        nama: "Nokos Indonesia",
+        desc: "Untuk aplikasi WhatsApp",
+        harga: "Rp 5.000"
     },
     {
         kategori: "Nokos",
-        nama: "Nokos Bulk (10 Nomor)",
-        desc: "Paket 10 nomor virtual dengan harga spesial",
-        harga: "Rp 70.000"
+        nama: "Nokos Kanada",
+        desc: "Untuk aplikasi WhatsApp",
+        harga: "Rp 9.000"
     },
 
     // ==================== SUNTIK MEDSOS ====================
