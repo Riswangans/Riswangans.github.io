@@ -50,15 +50,124 @@ let currentPage = 1;
 let filteredProducts = [];
 const productsPerPage = 5;
 
+// --- Prevent Horizontal Scroll on Layanan Section ---
+function preventHorizontalScrollOnLayanan() {
+    const layananSection = document.getElementById('layananSection');
+    if (!layananSection) return;
+    
+    layananSection.addEventListener('wheel', (e) => {
+        // Cek jika ada scroll horizontal
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
+    
+    // Untuk touch devices
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    layananSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    layananSection.addEventListener('touchmove', (e) => {
+        if (e.touches.length !== 1) return;
+        
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        
+        const diffX = touchX - touchStartX;
+        const diffY = touchY - touchStartY;
+        
+        // Jika scroll horizontal lebih dominan, prevent
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
+}
+
+// --- Load Testimoni from setting.js ---
+function loadTestimonials() {
+    const testimonialSlider = document.getElementById("testimonialSlider");
+    if (!testimonialSlider || !settingTestimoni) return;
+    
+    testimonialSlider.innerHTML = "";
+    
+    settingTestimoni.forEach((testimoni, index) => {
+        const testimonialCard = document.createElement("div");
+        testimonialCard.className = "testimonial-card col-md-4";
+        testimonialCard.setAttribute("data-aos", "fade-up");
+        testimonialCard.setAttribute("data-aos-delay", (index * 100).toString());
+        
+        testimonialCard.innerHTML = `
+            <p>"${testimoni.text}"</p>
+            <h4>- ${testimoni.author}</h4>
+        `;
+        
+        testimonialSlider.appendChild(testimonialCard);
+    });
+    
+    // Reinitialize AOS untuk testimoni baru
+    AOS.refresh();
+}
+
+// --- Load FAQ from setting.js ---
+function loadFAQ() {
+    const faqList = document.getElementById("faqList");
+    if (!faqList || !settingFAQ) return;
+    
+    faqList.innerHTML = "";
+    
+    settingFAQ.forEach((faq, index) => {
+        const faqId = index + 1;
+        const accordionItem = document.createElement("div");
+        accordionItem.className = "accordion-item";
+        
+        accordionItem.innerHTML = `
+            <h2 class="accordion-header" id="heading${faqId}">
+                <button class="accordion-button collapsed" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapse${faqId}" 
+                        aria-expanded="false" 
+                        aria-controls="collapse${faqId}">
+                    ${faq.question}
+                </button>
+            </h2>
+            <div id="collapse${faqId}" 
+                 class="accordion-collapse collapse" 
+                 aria-labelledby="heading${faqId}" 
+                 data-bs-parent="#faqList">
+                <div class="accordion-body">
+                    ${faq.answer}
+                </div>
+            </div>
+        `;
+        
+        faqList.appendChild(accordionItem);
+    });
+    
+    // Show accordion content
+    setTimeout(() => {
+        document.querySelectorAll(".accordion-collapse").forEach(el => {
+            el.style.visibility = "visible";
+        });
+    }, 100);
+}
+
 // --- Initialize Everything ---
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize AOS
     AOS.init();
     
-    // Show accordion content
-    document.querySelectorAll(".accordion-collapse").forEach(el => {
-        el.style.visibility = "visible";
-    });
+    // Prevent horizontal scroll on layanan section
+    preventHorizontalScrollOnLayanan();
+    
+    // Load dynamic content
+    loadTestimonials();
+    loadFAQ();
     
     // Sort produk berdasarkan kategori dan nama
     sortProducts();
@@ -419,6 +528,7 @@ window.addEventListener('resize', () => {
         updatePagination();
     }, 250);
 });
+
 // Indikator scroll tabel
 const tableScroll = document.querySelector('.table-scroll');
 if (tableScroll) {
